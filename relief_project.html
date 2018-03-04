@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="utf-8" />
+     <title>Volunteer Opportunities</title>
+     <style>
+          head,body{
+               margin: 0;
+               padding: 0;
+               height: 100%;
+               width: 100%;
+          }
+
+          footer{
+               width: 100%;
+               background-color: rgba(255,0,0,1);
+               color: white
+          }
+
+          ul{
+               list-style-type: none;
+               margin: 0;
+               padding: 0;
+               overflow: hidden;
+          }
+
+         li a:link, li a:visited{
+               display:block;
+               width: 120px;
+               font-weight: bold;
+               color: #ffffff;
+               background-color: rgb(255,0,0);
+               text-align: center;
+               padding: 4px;
+               text-decoration: none;
+               text-transform: uppercase;
+          }
+
+          li a:hover, li a:active{
+               background-color: rgba(255,0,0,0.5);
+          }
+
+          li{
+               float: left;
+          }
+
+          *{
+               box-sizing: border-box;
+          }
+
+          nav{
+               background-color: rgb(255,0,0);
+               width: 100%;
+          }
+
+         div {
+              display: block;
+          }
+
+          #wrapper {
+              width: 1350px;
+              height:800px;
+          }
+
+          #first, #second, #third {
+              float:left;
+              width: 33%;
+              height: 100%;
+          }
+
+
+     </style>
+     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCYV3BJ1MR1wJrC9ABT69oi0qWcy04vkuw&callback=initMap"> </script>
+     <script>
+
+          function initMap(){
+               var uluru = {lat: -28, lng: 0};
+               var map = new google.maps.Map(document.getElementById("third"), {zoom: 4, center: uluru });
+               var marker = new google.maps.Marker({ position: uluru, map: map });
+          }
+/*
+          TODO
+          document.getElementById("myButton").addEventListener("click", myFunction);
+
+          function myFunction(){
+
+               var http = new XMLHttpRequest();
+
+               http.onreadystatechange = function(){
+                    if (this.readyState == 4 && this.status == 200){
+                         var response = JSON.parse(this.responseText);
+                    }
+               };
+
+               http.open("GET", "https://maps.googleapis.com/maps/api/geocode/json?address=", true);
+               http.send();
+          }*/
+     </script>
+
+</head>
+<body>
+     <nav class="primary">
+          <ul>
+               <li><a href="post.html">Post</a></li>
+               <li><a href="about.html">About</a></li>
+          </ul>
+     </nav>
+     <div id="wrapper">
+          <div id="first">
+               <p>Below are a few charities, relief groups, and more!</p>
+               <p><a href="">American Red Cross</a></p>
+               <p><a href="">Children's Disaster Services</a><p>
+          </div>
+          <div id="second"></div>
+          <div id="third"></div>
+     </div>
+</body>
+</html>

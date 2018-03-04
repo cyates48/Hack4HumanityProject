@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Project - Post Page</title>
+    <link rel="stylesheet" href="post.css"/>
+</head>
+
+<body>
+    <div class="container">
+        <form>
+            <div class="title"><h1>Post a Job</h1></div>
+            <div class="form-inline">
+                <label class="col-md-2">Organization Name</label>
+                <input type="text" class="form-control" id="org-name">
+            </div>
+            <div class="form-inline">
+                <label class="col-md-2">Volunteer Position Title</label>
+                <input type="text" class="form-control" id="vol-title">
+            </div>
+            <div class="form-inline">
+                <label class="col-md-2">Address of Location</label>
+                <input type="text" class="form-control" id="location" placeholder="Number">
+                <input type="text" class="form-control" id="location" placeholder="Street Name">
+                <input type="text" class="form-control" id="location" placeholder="City">
+                <input type="text" class="form-control" id="location" placeholder="State">
+            </div>
+            <div class="form-inline">
+                <label class="col-md-2">Start Date</label>
+                <input type="text" class="form-control" id="start-date" placeholder="Date">
+            </div>
+            <div class="form-inline">
+                <label class="col-md-2">Estimated Duration: </label>
+                <input type="number" class="form-control" id="job-hours" min="0" max="8"> hours
+                <input type="number" class="form-control" id="job-minutes" min="0" max="59"> minutes
+            </div>
+            <div class="form-inline">
+                <label class="col-md-2" style="vertical-align:top;">Description</label>
+                <textarea class="form-control" id="job-description" rows="6" cols="84" placeholder="Be specific as you can."></textarea>
+            </div>
+            <div>
+                <button type="submit" class="btn btn-success btn-lg" style="width:200px;">Post A Job</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
