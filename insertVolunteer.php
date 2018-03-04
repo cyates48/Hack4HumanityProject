@@ -5,24 +5,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // collect input data
 	
      $orgName = $_POST['orgName']; 
-	 
-     $volunteeringTitle = $_POST['volunteeringTitle']; 
-	 
-	 $blockNumber = $_POST['blockNumber'];
-
-	 $streetName = $_POST['streetName'];
+     $jobTitle = $_POST['jobTitle']; 
+	 $startTime = $_POST['startTime'];
+	 $street = $_POST['street'];
 	 $city = $_POST['city'];
 	 $state = $_POST['state'];
 	 $startDate = $_POST['startDate'];
-	 $expectedTime = $_POST['expectedTime'];
-	 $description = $_POST['description'];
+	 $expectedDuration = $_POST['expectedDuration'];
+	 $jobDescription = $_POST['jobDescription'];
 	 $contactNo = $_POST['contactNo'];
 	
-	insertVolunteerIntoDB($orgName,$volunteeringTitle,$blockNumber,$streetName,$city,$state,$startDate,$expectedTime,$description,$contactNo);
+	insertVolunteerPostIntoDB($orgName,$jobTitle,$startTime,$street,$city,$state,$startDate,$expectedDuration,$jobDescription,$contactNo);
 	
 }
 
-function insertVolunteerIntoDB($orgName,$volunteeringTitle,$blockNumber,$street,$city,$state,$startDate,$expectedTime,$description,$contactNo){
+function insertVolunteerPostIntoDB($orgName,$jobTitle,$startTime,$street,$city,$state,$startDate,$expectedDuration,$jobDescription,$contactNo){
+	
 	//connect to your database. Type in your username, password and the DB path
 	$conn=oci_connect('ireyhano','coenlabs', '//dbserver.engr.scu.edu/db11g');
 	if(!$conn) {
@@ -30,23 +28,21 @@ function insertVolunteerIntoDB($orgName,$volunteeringTitle,$blockNumber,$street,
         exit;
 	}
 
-	$position = rand(0, 99999);
-
-	$query = oci_parse($conn, "Insert Into Volunteering(position, orgName, volunteeringTitle, description, blockNumber, street, city, state, startDate, expectedTime, contactNo) values(:position, :orgName, :volunteeringTitle, :description, :blockNumber, :street, :city, :state, :startDate, :expectedTime, :contactNo)");	
+	$query = oci_parse($conn, "Insert Into Volunteering(orgName, jobTitle, jobDescription, startTime, street, city, state, startDate, expectedDuration, contactNo) values(:orgName, :jobTitle, :jobDescription, :startTime, :street, :city, :state, :startDate, :expectedDuration, :contactNo)");	
 	
-	oci_bind_by_name($query, ':position', $position);
 	oci_bind_by_name($query, ':orgName', $orgName);
-	oci_bind_by_name($query, ':volunteeringTitle', $volunteeringTitle);
-	oci_bind_by_name($query, ':description', $description);
-	oci_bind_by_name($query, ':blockNumber', $blockNumber);
+	oci_bind_by_name($query, ':jobTitle', $jobTitle);
+	oci_bind_by_name($query, ':jobDescription', $jobDescription);
+	oci_bind_by_name($query, ':startTime', $startTime);
 	oci_bind_by_name($query, ':street', $street);
 	oci_bind_by_name($query, ':city', $city);
 	oci_bind_by_name($query, ':state', $state);
 	oci_bind_by_name($query, ':startDate', $startDate);
-	oci_bind_by_name($query, ':expectedTime', $expectedTime);
+	oci_bind_by_name($query, ':expectedDuration', $expectedDuration);
 	oci_bind_by_name($query, ':contactNo', $contactNo);
 	
 	// Execute the query
+	
 	$res = oci_execute($query);
 	if ($res)
 		// TODO: change this display a success message (if at all)
@@ -55,6 +51,7 @@ function insertVolunteerIntoDB($orgName,$volunteeringTitle,$blockNumber,$street,
 		$e = oci_error($query); 
         	echo $e['message']; 
 	}
+	
 	OCILogoff($conn);	
 }
 

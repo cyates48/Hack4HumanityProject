@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Volunteer Opportunities</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/hack_postjob.css"/>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-custom navbar-inverse fixed-top bg-inverse">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="index.html">Home</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="area">
+        <div class="header text-center">
+            <p>How can you provide help to others during these natural disasters? Find a job!</p>
+        </div>
+        <div class="img-rounded search-box text-center">
+            <div class="row">
+                <form method="post" action="http://students.engr.scu.edu/~ireyhano/h4h/newfetch.php">
+                    <div class="col-md-offset-4 col-md-2">
+                        <label>Organization Name</label>
+                        <input type="text" name="orgName" class="form-control" placeholder="Organization Name">
+                    </div>
+                    <div class="col-md-2">
+                        <label>City</label>
+                        <input type="text" class="form-control" placeholder="City">
+                    </div>  
+                    <div class="search-btn text-center">
+                        <button type="submit" value="Submit" class="btn btn-success btn-lg">Search</button>
+                    </div>  
+                </form>
+            </div>    
+        </div>
+    </div>
+</body>
+
+</html>

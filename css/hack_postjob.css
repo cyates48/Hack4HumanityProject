@@ -1,0 +1,71 @@
+body {
+	background-image: url(../img/natural_disaster.jpg);
+}
+p {
+	font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: 60;
+	font-size: 50px;
+	line-height: 1.5;
+}
+.form-inline {
+	padding-bottom: 10px;
+}
+.area {
+	margin-top: -20px;
+	height: 100%;
+}
+.header {
+	padding-top: 10%;
+	font-size: 50;
+
+}
+.search-box {
+	background-color: black;
+	opacity: .85;
+	padding-bottom: 4%;
+	padding-top: 4%;
+	color: white;
+	margin-top: 5%;
+}
+.search-btn{
+	padding-top: 2%;
+}
+.title {
+	padding-bottom: 20px;
+}
+.navbar {
+	padding-bottom: 5px;
+	color: white;
+}
+.bottom {
+	background-color: white;
+	padding: 40px 30px;
+	margin-top: 7%;
+}
+
+#map-size {
+  width: 58%;
+  height: 500px;
+}
+#map {
+  width: 100%;
+  height: 100%;
+}
+#job-section {
+	width: 100%;
+	height: 500px;
+	background-color: black;
+	opacity: .85
+}
+.header {
+	font: arial;
+	font-size: 50;
+}
+.post-job {
+	background-color: white;
+	height: auto;
+	width: auto;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	margin-top: 5%;
+}
